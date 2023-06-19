@@ -1,9 +1,9 @@
 /* **********Custom Properties********* */
 /*ROOT es la etiqueta HTML con mayor jerarquia*/
 :root {
-  --first-alpha-color: rgba(217, 0, 98, 0.75);
-  --first-color: #d90062;
-  --second-color: #14192d;
+  --first-alpha-color: #23ff4fdc;
+  --first-color: #23ff4e;
+  --second-color: black;
   --second-alpha-color: rgba(20, 25, 45, 0.75);
   --third-color: #501464;
   --third-alpha-color: rgba(80, 20, 100, 0.75);
@@ -47,15 +47,18 @@ a {
 }
 a:hover {
   opacity: 0.75;
+  color: #23ff4f78;
 }
 
 h1 {
   margin: 0;
   font-size: 2rem;
+  color: var(--first-color);
 }
 h2 {
   margin: 0;
   font-size: 1.5rem;
+  color: var(--first-color);
 }
 h3 {
   margin: 0;
@@ -68,6 +71,7 @@ h4 {
 h5 {
   margin: 0;
   font-size: 0.85rem;
+  color: var(--white-color);
 }
 h6 {
   margin: 0;
@@ -151,6 +155,10 @@ p {
 }
 
 /*********** Contact Form ***********/
+
+.contact {
+  background-color: var(--black-color);
+}
 .contact-form {
   margin: 2rem auto;
   padding: 1rem;
@@ -167,6 +175,7 @@ p {
 textarea {
   font-size: 0.85rem;
   font-family: var(--font);
+  border: 5px solid var(--first-color);
 }
 
 .contact-form input {
@@ -180,6 +189,8 @@ textarea {
 }
 
 .contact-form input[type="submit"] {
+  border: 1px solid var(--first-color);
+  color: var(--white-color);
   margin-top: 0;
   cursor: pointer;
   transition: all 0.5s ease-out;
@@ -187,6 +198,7 @@ textarea {
 
 .contact-form input[type="submit"]:hover {
   opacity: 0.75;
+  color: #23ff4f78;
 }
 
 .contact-form *::placeholder {
@@ -254,7 +266,7 @@ textarea {
 }
 
 .hero-image-title {
-  font-size: 7.5vw;
+  font-size: 4.5vw;
   color: var(--hero-text-color);
 }
 
@@ -366,10 +378,36 @@ textarea {
 }
 /********** ProgressBar********/
 
-progress {
+.container-1 {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 1rem;
-  background-color: var(--gray-color);
+}
+.container-2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.habilidades {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.progress img {
+  width: 50%;
+}
+
+.progress img:hover {
+  width: 70%;
+  transition: 0.5s;
+}
+
+.progress b {
+  color: var(--white-color);
 }
 
 progress::-webkit-progress-bar {
@@ -405,13 +443,18 @@ progress::-moz-progress-bar {
 .bg-gray-light {
   background-color: var(--gray-light-color);
 }
+.bg-black {
+  background-color: black;
+}
 
 .box-shadow-1 {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+  background-color: none;
+  border: 1px solid var(--first-color);
 }
 
 .btn {
-  border-radius: 0.5rem;
+  /*border-radius: 0.5rem;*/
   padding: 0.8rem;
   display: initial;
   width: 200px;
@@ -419,7 +462,8 @@ progress::-moz-progress-bar {
   text-align: center;
   text-decoration: none;
   color: var(--white-color);
-  background-color: var(--first-color);
+  border: 1px solid var(--first-color);
+  background-color: black;
 }
 
 .container {
@@ -447,7 +491,7 @@ progress::-moz-progress-bar {
   padding: 0.5rem 1rem;
   width: 250px;
   text-align: center;
-  color: var(--title-color);
+  color: var(--white-color);
 }
 .text-first-color {
   color: var(--first-color);
@@ -465,6 +509,11 @@ progress::-moz-progress-bar {
 }
 
 @media screen and (min-width: 1024px) {
+  .habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, 40%);
+    margin-right: 20vh;
+  }
   .full-lg-screen {
     width: 100%;
     min-height: 100vh;
@@ -486,6 +535,10 @@ progress::-moz-progress-bar {
   margin-bottom: 2rem;
 }
 
+.about p {
+  color: var(--white-color);
+}
+
 .contact-card {
   margin: 1rem auto;
   padding: 1rem;
@@ -504,6 +557,7 @@ progress::-moz-progress-bar {
 }
 .contact-card > small {
   margin-top: -1rem;
+  color: var(--white-color);
 }
 
 .footer {
@@ -535,7 +589,9 @@ progress::-moz-progress-bar {
   font-size: 2rem;
   text-decoration: none;
 }
-
+.portfolio {
+  background-color: var(--second-color);
+}
 .portfolio-card {
   position: relative;
   width: 100%;
@@ -556,7 +612,7 @@ progress::-moz-progress-bar {
   width: 100%;
   height: 100%;
   padding: 1rem;
-  background-color: var(--first-alpha-color);
+  background-color: var(--black-color);
   color: var(--white-color);
   opacity: 0;
   pointer-events: none;
@@ -570,7 +626,7 @@ progress::-moz-progress-bar {
 
 .portfolio-card-info > div {
   padding: 1rem;
-  border: thin solid var(--white-color);
+  border: thin solid var(--first-color);
   width: 100%;
   height: 100%;
 }
@@ -630,6 +686,7 @@ progress::-moz-progress-bar {
     grid-template-columns: repeat(2, 48%);
     justify-content: space-between;
   }
+
   .portfolio > .container {
     display: grid;
     grid-template-columns: repeat(2, 50%);
